@@ -8,7 +8,7 @@ This repository serves as the centralized hub for the [Phantom Engine](https://g
 - **Crate Documentation**: Static technical references for the engine's modular components.
 
 ## Performance Dashboard
-The interactive performance charts are generated automatically by the Phantom Engine CI/CD pipeline and can be found in the `/benchmarks` directory.
+The interactive performance charts are generated automatically by the Phantom Engine CI/CD pipeline and can be found in the `/benchmarks` directory. See Performance charts [Here](https://polymit.github.io/phantom-docs/benchmarks/)
 
 ---
 *Maintained by the Polymit team.*
