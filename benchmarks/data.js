@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1778737477679,
+  "lastUpdate": 1778774199538,
   "repoUrl": "https://github.com/polymit/phantom-engine",
   "entries": {
     "Phantom Engine Performance Firewall": [
@@ -167,6 +167,90 @@ window.BENCHMARK_DATA = {
             "name": "pool_acquire_tier1",
             "value": 202047,
             "range": "± 5428",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "polymit.main@gmail.com",
+            "name": "polymit",
+            "username": "polymit-hq"
+          },
+          "committer": {
+            "email": "polymit.main@gmail.com",
+            "name": "polymit",
+            "username": "polymit-hq"
+          },
+          "distinct": true,
+          "id": "e6a8ee0adc84c8d727481be5378673a9e4d03350",
+          "message": "chore(net): upgrade http-quik to v0.1.2 for OS-aware transport\n\n- Upgraded http-quik dependency to latest stable version v0.1.2.\n- Implemented dynamic persona-to-platform mapping for Chrome 134 profiles.\n- Enabled OS-aware transport fingerprints (ALPS payloads) for Windows personas.\n- Simplified SmartNetworkClient to leverage host auto-detection by default.\n- Updated .gitignore to exclude scratch/ and .agents/ directories.",
+          "timestamp": "2026-05-14T21:20:57+05:30",
+          "tree_id": "81cfe52b1790d15374c05040c9d49de6fe3debb5",
+          "url": "https://github.com/polymit/phantom-engine/commit/e6a8ee0adc84c8d727481be5378673a9e4d03350"
+        },
+        "date": 1778774199304,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "session_create_quickjs",
+            "value": 716,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "session_create_v8",
+            "value": 721,
+            "range": "± 28",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "session_clone_cow",
+            "value": 602,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "session_suspend_resume",
+            "value": 102,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "cct_full_1000_nodes",
+            "value": 6223546,
+            "range": "± 284220",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "cct_selective_1000_nodes",
+            "value": 3316589,
+            "range": "± 67487",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "cct_delta_10_mutations",
+            "value": 5546,
+            "range": "± 24",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "quickjs_eval_simple",
+            "value": 3287,
+            "range": "± 32",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "v8_eval_simple",
+            "value": 1,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "pool_acquire_tier1",
+            "value": 201449,
+            "range": "± 862",
             "unit": "ns/iter"
           }
         ]
