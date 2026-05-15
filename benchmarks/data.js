@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1778818582931,
+  "lastUpdate": 1778828126684,
   "repoUrl": "https://github.com/polymit/phantom-engine",
   "entries": {
     "Phantom Engine Performance Firewall": [
@@ -335,6 +335,90 @@ window.BENCHMARK_DATA = {
             "name": "pool_acquire_tier1",
             "value": 205280,
             "range": "± 1038",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "polymit.main@gmail.com",
+            "name": "polymit",
+            "username": "polymit-hq"
+          },
+          "committer": {
+            "email": "polymit.main@gmail.com",
+            "name": "polymit",
+            "username": "polymit-hq"
+          },
+          "distinct": true,
+          "id": "e69d1342517084f4bb8fbce12d69958fa85ad01f",
+          "message": "fix(engine): harden navigation, memory, and interaction layers\n\nThis commit addresses four critical reliability bugs:\n\n1. Memory: Implements dynamic QuickJS heap scaling (up to 256MB) to\n   resolve js_out_of_memory panics on dense DOM structures.\n2. Interaction: Implements a navigation bridge and auto-scroll for\n   browser_click, ensuring links are traversed and off-screen\n   elements are visible before event dispatch.\n3. Scrolling: Implements manual viewport mutation for keyboard\n   navigation keys (PageDown, Space, etc.) to ensure scroll sync.\n4. Culling: Relaxes Selective mode culling with a 2000px vertical\n   buffer and refined relevance heuristics to prevent empty graphs.\n\nAlso updates the layout pipeline to calculate document boundaries\n(total_width/height) for accurate scroll clamping.",
+          "timestamp": "2026-05-15T12:20:26+05:30",
+          "tree_id": "cb591baef0e1ec14d9107fb14d380b44e60b42bc",
+          "url": "https://github.com/polymit/phantom-engine/commit/e69d1342517084f4bb8fbce12d69958fa85ad01f"
+        },
+        "date": 1778828126138,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "session_create_quickjs",
+            "value": 552,
+            "range": "± 33",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "session_create_v8",
+            "value": 557,
+            "range": "± 8",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "session_clone_cow",
+            "value": 468,
+            "range": "± 1",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "session_suspend_resume",
+            "value": 81,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "cct_full_1000_nodes",
+            "value": 4831318,
+            "range": "± 38968",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "cct_selective_1000_nodes",
+            "value": 3154212,
+            "range": "± 12306",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "cct_delta_10_mutations",
+            "value": 4249,
+            "range": "± 70",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "quickjs_eval_simple",
+            "value": 2587,
+            "range": "± 86",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "v8_eval_simple",
+            "value": 1,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "pool_acquire_tier1",
+            "value": 155219,
+            "range": "± 782",
             "unit": "ns/iter"
           }
         ]
